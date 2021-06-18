@@ -1,0 +1,47 @@
+
+<div class="container">
+
+    <form class="d-flex" (ngSubmit)="add()" autocomplete="off">
+        <input
+         name="name"
+         [(ngModel)]="model.fruitName"
+         class="form-control me-2" 
+         type="text" 
+         placeholder="name">
+
+        <input
+        name="image"
+        [(ngModel)]="model.img"
+        class="form-control me-2" 
+        type="text" 
+        placeholder="image">
+        <button class="btn btn-outline-success" type="submit">Add</button>
+      </form>
+
+    <form class="d-flex" (ngSubmit)="search()" autocomplete="off">
+        <input
+         name="textSearch"
+         [(ngModel)]="textSearch"
+         class="form-control me-2" 
+         type="text" 
+         placeholder="Username">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let fruit of fruits">
+            <td>{{fruit.fruitName}}</td>
+            <td>
+                <img src="{{fruit.img}}" width="500" height="300">
+            
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
